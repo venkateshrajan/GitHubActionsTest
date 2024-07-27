@@ -4,6 +4,16 @@
 #include "GitHubActionsTest.h"
 #include "gtest/gtest.h"
 
+TEST(GTESTExample, Test1)
+{
+	EXPECT_TRUE(1 == 1);
+}
+
+TEST(GTESTExample, Test2)
+{
+	EXPECT_FALSE(1 == 2);
+}
+
 int main(int argc, char* argv[])
 {
 	testing::InitGoogleTest(&argc, argv);

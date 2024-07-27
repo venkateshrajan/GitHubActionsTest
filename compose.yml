@@ -1,0 +1,10 @@
+services:
+  github-actions-test:
+    image: github-actions-test
+    build:
+        context: .
+        dockerfile: Dockerfile
+    develop:
+        watch:
+          - path: .
+            action: rebuild
