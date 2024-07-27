@@ -11,13 +11,15 @@ endif()
 
 project ("GitHubActionsTest")
 
-set(SOURCES "GitHubActionsTest.cpp")
+include("$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
+find_package(GTest CONFIG REQUIRED)
+
+set(SOURCES "src/GitHubActionsTest.cpp")
 
 # Add source to this project's executable.
 add_executable (GitHubActionsTest ${SOURCES})
+target_link_libraries(GitHubActionsTest PRIVATE GTest::gtest)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GitHubActionsTest PROPERTY CXX_STANDARD 20)
 endif()
-
-# TODO: Add tests and install targets if needed.
