@@ -47,6 +47,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: lukka/run-vcpkg@v11
+      with:
+        vcpkgGitCommitId: '69efe9cc2df0015f0bb2d37d55acde4a75c9a25b'
+        doNotCache: true
     # - name: Prepare vcpkg
     #   shell: bash
     #   run: |
