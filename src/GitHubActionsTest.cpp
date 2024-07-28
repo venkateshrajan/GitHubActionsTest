@@ -19,6 +19,11 @@ TEST(GTESTExample, Test3)
 	EXPECT_FALSE(1 == 2);
 }
 
+TEST(GTESTExample, Test4)
+{
+	EXPECT_TRUE(1 == 2);
+}
+
 
 int main(int argc, char* argv[])
 {
