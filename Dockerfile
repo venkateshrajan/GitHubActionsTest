@@ -9,4 +9,4 @@ WORKDIR /home/GitHubActionsTest
 COPY . ./
 RUN cmake -S . -B .
 RUN cmake --build .
-ENTRYPOINT ["./GitHubActionsTest"]
+ENTRYPOINT ["ctest"]

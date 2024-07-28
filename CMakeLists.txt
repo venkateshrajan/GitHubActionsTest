@@ -14,6 +14,7 @@ project ("GitHubActionsTest")
 include("$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 find_package(GTest CONFIG REQUIRED)
 
+enable_testing()
 set(SOURCES "src/GitHubActionsTest.cpp")
 
 # Add source to this project's executable.
@@ -23,3 +24,6 @@ target_link_libraries(GitHubActionsTest PRIVATE GTest::gtest)
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GitHubActionsTest PROPERTY CXX_STANDARD 20)
 endif()
+
+include(GoogleTest)
+gtest_discover_tests(GitHubActionsTest)
