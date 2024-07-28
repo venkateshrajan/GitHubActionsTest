@@ -28,9 +28,9 @@ jobs:
         build_type: [Release]
         c_compiler: [gcc, clang, cl]
         include:
-          - os: windows-latest
-            c_compiler: cl
-            cpp_compiler: cl
+          # - os: windows-latest
+          #   c_compiler: cl
+          #   cpp_compiler: cl
           - os: ubuntu-latest
             c_compiler: gcc
             cpp_compiler: g++
@@ -38,10 +38,10 @@ jobs:
             c_compiler: clang
             cpp_compiler: clang++
         exclude:
-          - os: windows-latest
-            c_compiler: gcc
-          - os: windows-latest
-            c_compiler: clang
+          # - os: windows-latest
+          #   c_compiler: gcc
+          # - os: windows-latest
+          #   c_compiler: clang
           - os: ubuntu-latest
             c_compiler: cl
 
@@ -49,8 +49,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: lukka/run-vcpkg@v11
       with:
-        vcpkgGitCommitId: '69efe9cc2df0015f0bb2d37d55acde4a75c9a25b'
-        doNotCache: true
+        vcpkgGitCommitId: HEAD
     # - name: Prepare vcpkg
     #   shell: bash
     #   run: |
