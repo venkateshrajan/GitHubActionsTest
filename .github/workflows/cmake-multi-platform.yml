@@ -46,6 +46,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: lukka/run-vcpkg@v11
+    # - name: Prepare vcpkg
+    #   shell: bash
+    #   run: |
+    #     git clone https://github.com/Microsoft/vcpkg.git ${{ github.workspace }}/vcpkg
+    #     ./vcpkg/bootstrap-vcpkg.sh
+    #     echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> "$GITHUB_OUTPUT"
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
